@@ -39,7 +39,7 @@ function FlowEditor({ workflow }: { workflow: Workflow }) {
         fitViewOptions={fitViewOptions}
         fitView
       >
-        <Controls position="top-left" />
+        <Controls position="top-left" fitViewOptions={fitViewOptions} />
         <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
       </ReactFlow>
     </main>
