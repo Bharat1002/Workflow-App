@@ -1,4 +1,4 @@
-import { GetWorkflowExecutionWithPhases } from "@/actions/workflows/GetWorkflowExecutionWithPhases";
+import { GetWorkflowExecutionWithPhases } from "@/actions/workflows/getWorkflowExecutionWithPhases";
 import Topbar from "@/app/workflow/_components/topbar/Topbar";
 import { Loader2Icon } from "lucide-react";
 import { Suspense } from "react";
@@ -16,7 +16,8 @@ export default function ExecutionViewerPage({
     <div className="flex flex-col h-screen w-full overflow-hidden">
       <Topbar
         workflowId={params.workflowId}
-        title={`Workflow run details" subtitle="Run ID: ${params.executionId}`}
+        title={`Workflow run details`}
+        subtitle={`Run ID: ${params.executionId}`}
         hideButtons
       />
       <section className="flex h-full overflow-auto">
