@@ -8,7 +8,7 @@ export function DatesToDurationString(
   const timeElapsed = end.getTime() - start.getTime();
   if (timeElapsed < 1000) {
     // Less then 1 second
-    return `${timeElapsed}`;
+    return `${timeElapsed}ms`;
   }
 
   const duration = intervalToDuration({
