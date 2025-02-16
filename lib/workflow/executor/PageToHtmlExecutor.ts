@@ -12,5 +12,4 @@ export async function PageToHtmlExecutor(
     environment.log.error(error.message);
     return false;
   }
-  return true;
 }
