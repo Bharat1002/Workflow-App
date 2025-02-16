@@ -1,11 +1,6 @@
 import { TaskParamType, TaskType } from "@/types/task";
 import { WorkflowTask } from "@/types/workflow";
-import {
-  EyeIcon,
-  LucideProps,
-  MousePointerClick,
-  TextIcon,
-} from "lucide-react";
+import { EyeIcon } from "lucide-react";
 
 export const WaitForElementTask = {
   type: TaskType.WAIT_FOR_ELEMENT,
@@ -27,6 +22,7 @@ export const WaitForElementTask = {
     {
       name: "Visibility",
       type: TaskParamType.SELECT,
+      hideHandle: true,
       required: true,
       options: [
         { label: "Visible", value: "visible" },
