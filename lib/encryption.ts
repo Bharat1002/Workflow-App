@@ -10,7 +10,6 @@ export const symmetricEncrypt = (data: string) => {
   if (!key) throw new Error("encryption key not found");
 
   const iv = crypto.randomBytes(16);
-  console.log(`key is ${key} and length is ${key.length}`);
   const cipher = crypto.createCipheriv(ALG, Buffer.from(key, "hex"), iv);
 
   let encrypted = cipher.update(data);
