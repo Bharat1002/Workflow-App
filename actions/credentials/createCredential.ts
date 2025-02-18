@@ -7,6 +7,7 @@ import {
   createCredentialSchemaType,
 } from "@/schema/credential";
 import { auth } from "@clerk/nextjs/server";
+import { revalidatePath } from "next/cache";
 
 export async function CreateCredential(form: createCredentialSchemaType) {
   const { success, data } = createCredentialSchema.safeParse(form);
@@ -33,4 +34,6 @@ export async function CreateCredential(form: createCredentialSchemaType) {
   if (!result) {
     throw new Error("failed to create credential");
   }
+
+  revalidatePath("/credentials");
 }
