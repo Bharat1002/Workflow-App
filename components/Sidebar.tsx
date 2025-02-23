@@ -17,7 +17,7 @@ import UserAvailableCreditsBadge from "./UserAvailableCreditsBadge";
 
 const routes = [
   {
-    href: "",
+    href: "home",
     label: "Home",
     icon: HomeIcon,
   },

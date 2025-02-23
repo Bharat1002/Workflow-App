@@ -6,7 +6,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { GetStatsCardsValues } from "@/actions/analytics/getStatsCardsValues";
 import { CirclePlayIcon, CoinsIcon, WaypointsIcon } from "lucide-react";
 import StatsCard from "./_components/StatsCard";
-import { waitFor } from "@/lib/helper/waitFor";
 import { GetWorkflowExecutionsStats } from "@/actions/analytics/getWorkflowExecutionStats";
 import ExecutionStatusChart from "./_components/ExecutionStatusChart";
 import { GetCreditUsageInPeriod } from "@/actions/analytics/getCreditUsageInPeriod";
@@ -103,7 +102,6 @@ async function CreditsUsageInPeriod({
       description="Daily credits consumed in selected period"
     />
   );
-  return <pre>{JSON.stringify(data, null, 4)}</pre>;
 }
 
 function StatsCardSkeleton() {

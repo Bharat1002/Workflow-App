@@ -13,7 +13,7 @@ import { MobileSidebar } from "./Sidebar";
 
 function BreadcrumbHeader() {
   const pathname = usePathname();
-  const paths = pathname === "/" ? [""] : pathname?.split("/");
+  const paths = pathname === "/home" ? ["/home"] : pathname?.split("/");
   return (
     <div className="flex items-center flex-start">
       <MobileSidebar />
