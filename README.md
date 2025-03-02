@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Workflow App
 
-## Getting Started
+This is a highly customizable web scraper built with Next.js 14, PostgreSQL/SQLite, Prisma, and React Flow. It enables users to create, manage, and execute complex web scraping workflows with a visual, no-code/low-code interface.
 
-First, run the development server:
+## Screenshots
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### ScreenShot 1
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Screenshot 1](/public/images/Screenshot_1.png)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ScreenShot 2
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![Screenshot 2](/public/images/Screenshot_2.png)
 
-## Learn More
+### ScreenShot 3
 
-To learn more about Next.js, take a look at the following resources:
+![Screenshot 3](/public/images/Screenshot_3.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### ScreenShot 4
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![Screenshot 4](/public/images/Screenshot_4.png)
 
-## Deploy on Vercel
+### ScreenShot 5
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Screenshot 5](/public/images/Screenshot_5.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### ScreenShot 6
+
+![Screenshot 6](/public/images/Screenshot_6.png)
+
+### ScreenShot 7
+
+![Screenshot 7](/public/images/Screenshot_7.png)
+
+## Technologies Used
+
+- Nextjs 14 with server actions
+- React Flow
+- PostgreSQL/SQLite
+- Puppeteer
+- Prisma
+
+## Features
+
+- Launch Browser
+
+  - Initiates a browser instance to begin the web scraping process, enabling interaction with web pages.
+
+- Page to HTML
+
+  - Extracts the complete HTML content of the current page for detailed analysis and processing.
+
+- Extract Text from Element
+
+  - Retrieves the text content from a specified HTML element using a given CSS selector.
+
+- Fill Input
+
+  - Automatically fills a specified input field with a desired value, emulating user input.
+
+- Click Element
+
+  - Simulates a click action on a specified HTML element, triggering any associated events or navigation.
+
+- Scroll to Element
+
+  - Scrolls to a specified element on the page, emulating user behavior for dynamic content loading.
+
+- Wait for Element
+
+  - Pauses the workflow until a specified element becomes visible or hidden on the page.
+
+- Extract Data via AI
+
+  - Uses AI to parse HTML content and extract structured data based on a custom prompt, returning JSON output.
+
+- Read JSON
+
+  - Reads and retrieves a specific key or property from a JSON object for use in workflows.
+
+- Build JSON
+
+  - Adds or updates data within an existing JSON object or creates a new one with the specified properties.
+
+- Deliver via Webhook
+
+  - Sends the scraped data to an external API endpoint through a POST request for further processing or storage.
+
+- Navigate to URL
+
+  - Navigates to a specified URL, loading the desired web page for scraping or interaction.
