@@ -3,7 +3,7 @@
 import prisma from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 
-export async function GetAvailableCredits() {
+export async function getAvailableCredits() {
   const { userId } = auth();
   if (!userId) {
     throw new Error("unauthenticated");

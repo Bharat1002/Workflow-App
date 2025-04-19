@@ -7,7 +7,7 @@ import { WorkflowStatus } from "@/types/workflow";
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 
-export async function PublishWorkflow({
+export async function publishWorkflow({
   id,
   flowDefinition,
 }: {

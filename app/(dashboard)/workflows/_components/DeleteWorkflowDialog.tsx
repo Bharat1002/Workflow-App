@@ -1,6 +1,6 @@
 "use client";
 
-import { DeleteWorkflow } from "@/actions/workflows/deleteWorkflow";
+import { deleteWorkflow } from "@/actions/workflows/deleteWorkflow";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -33,7 +33,7 @@ function DeleteWorkflowDialog({
   const [confirmText, setConfirmText] = useState("");
 
   const deleteMutation = useMutation({
-    mutationFn: DeleteWorkflow,
+    mutationFn: deleteWorkflow,
     onSuccess: () => {
       toast.success("Workflow deleted successfully", { id: workflowId });
       setConfirmText("");

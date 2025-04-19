@@ -1,4 +1,4 @@
-import { GetWorkflowExecutions } from "@/actions/workflows/getWorkflowExecutions";
+import { getWorkflowExecutions } from "@/actions/workflows/getWorkflowExecutions";
 import Topbar from "../../_components/topbar/Topbar";
 import { Suspense } from "react";
 import { InboxIcon, Loader2Icon } from "lucide-react";
@@ -31,7 +31,7 @@ export default function ExecutionsPage({
 }
 
 async function ExecutionsTableWrapper({ workflowId }: { workflowId: string }) {
-  const executions = await GetWorkflowExecutions(workflowId);
+  const executions = await getWorkflowExecutions(workflowId);
   if (!executions) {
     return <div>No data</div>;
   }

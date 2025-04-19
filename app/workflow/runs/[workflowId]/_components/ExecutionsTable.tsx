@@ -1,6 +1,6 @@
 "use client";
 
-import { GetWorkflowExecutions } from "@/actions/workflows/getWorkflowExecutions";
+import { getWorkflowExecutions } from "@/actions/workflows/getWorkflowExecutions";
 import { useQuery } from "@tanstack/react-query";
 import {
   Table,
@@ -18,7 +18,7 @@ import { CoinsIcon } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { useRouter } from "next/navigation";
 
-type InitialDataType = Awaited<ReturnType<typeof GetWorkflowExecutions>>;
+type InitialDataType = Awaited<ReturnType<typeof getWorkflowExecutions>>;
 
 function ExecutionsTable({
   workflowId,
@@ -31,7 +31,7 @@ function ExecutionsTable({
   const query = useQuery({
     queryKey: ["executions", workflowId],
     initialData,
-    queryFn: () => GetWorkflowExecutions(workflowId),
+    queryFn: () => getWorkflowExecutions(workflowId),
     refetchInterval: 5000,
   });
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import { GetCreditUsageInPeriod } from "@/actions/analytics/getCreditUsageInPeriod";
+import { getCreditUsageInPeriod } from "@/actions/analytics/getCreditUsageInPeriod";
 import {
   Card,
   CardContent,
@@ -19,7 +19,7 @@ import {
 import { ChartColumnStackedIcon } from "lucide-react";
 import { Area, Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 
-type ChartData = Awaited<ReturnType<typeof GetCreditUsageInPeriod>>;
+type ChartData = Awaited<ReturnType<typeof getCreditUsageInPeriod>>;
 
 const chartConfig = {
   success: { label: "Success Phases Credits", color: "hsl(var(--chart-2))" },

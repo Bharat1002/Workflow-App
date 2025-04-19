@@ -13,13 +13,13 @@ import {
 import { useId } from "react";
 import { Label } from "@/components/ui/label";
 import { useQuery } from "@tanstack/react-query";
-import { GetCredentialsForUser } from "@/actions/credentials/getCredentialsForUser";
+import { getCredentialsForUser } from "@/actions/credentials/getCredentialsForUser";
 
 function CredentialsParam({ param, updateNodeParamValue, value }: ParamProps) {
   const id = useId();
   const query = useQuery({
     queryKey: ["credentials-for-user"],
-    queryFn: () => GetCredentialsForUser(),
+    queryFn: () => getCredentialsForUser(),
     refetchInterval: 10000,
   });
   return (

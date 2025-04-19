@@ -4,7 +4,7 @@ import prisma from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 import { stripe } from "@/lib/stripe/stripe";
 
-export async function DownloadInvoice(id: string) {
+export async function downloadInvoice(id: string) {
   const { userId } = await auth();
 
   if (!userId) {

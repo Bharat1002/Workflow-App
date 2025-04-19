@@ -1,6 +1,6 @@
 "use client";
 
-import { PublishWorkflow } from "@/actions/workflows/publishWorkflow";
+import { publishWorkflow } from "@/actions/workflows/publishWorkflow";
 import useExecutionPlan from "@/components/hooks/useExecutionPlan";
 import { Button } from "@/components/ui/button";
 import { useMutation } from "@tanstack/react-query";
@@ -13,7 +13,7 @@ function PublishBtn({ workflowId }: { workflowId: string }) {
   const { toObject } = useReactFlow();
 
   const mutation = useMutation({
-    mutationFn: PublishWorkflow,
+    mutationFn: publishWorkflow,
     onSuccess: () => {
       toast.success("Workflow published", { id: workflowId });
     },

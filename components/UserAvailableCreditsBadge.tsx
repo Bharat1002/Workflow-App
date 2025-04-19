@@ -1,6 +1,6 @@
 "use client";
 
-import { GetAvailableCredits } from "@/actions/billing/getAvailableCredits";
+import { getAvailableCredits } from "@/actions/billing/getAvailableCredits";
 import { cn } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import { CoinsIcon, Loader2Icon } from "lucide-react";
@@ -12,7 +12,7 @@ import { buttonVariants } from "./ui/button";
 function UserAvailableCreditsBadge() {
   const query = useQuery({
     queryKey: ["user-available-credits"],
-    queryFn: () => GetAvailableCredits(),
+    queryFn: () => getAvailableCredits(),
     refetchInterval: 30 * 1000, // 30 seconds
   });
   return (

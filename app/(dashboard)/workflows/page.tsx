@@ -1,4 +1,4 @@
-import { GetWorkflowsForUser } from "@/actions/workflows/getWorkflowsForUser";
+import { getWorkflowsForUser } from "@/actions/workflows/getWorkflowsForUser";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AlertCircle, InboxIcon } from "lucide-react";
@@ -37,7 +37,7 @@ function UserWorkflowsSkeleton() {
 
 async function UserWorkflows() {
   try {
-    const workflows = await GetWorkflowsForUser();
+    const workflows = await getWorkflowsForUser();
     if (workflows.length === 0) {
       return (
         <div className="flex flex-col gap-4 h-full items-center justify-center">

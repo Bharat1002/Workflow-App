@@ -5,7 +5,7 @@ import { WorkflowStatus } from "@/types/workflow";
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 
-export async function UnpublishWorkflow(id: string) {
+export async function unpublishWorkflow(id: string) {
   const { userId } = auth();
   if (!userId) {
     throw new Error("unauthenticated");

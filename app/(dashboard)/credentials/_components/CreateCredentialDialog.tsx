@@ -21,13 +21,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useMutation } from "@tanstack/react-query";
-import { CreateWorkflow } from "@/actions/workflows/createWorkflow";
 import { toast } from "sonner";
 import {
   createCredentialSchema,
   createCredentialSchemaType,
 } from "@/schema/credential";
-import { CreateCredential } from "@/actions/credentials/createCredential";
+import { createCredential } from "@/actions/credentials/createCredential";
 
 function CreateCredentialDialog({ triggerText }: { triggerText?: string }) {
   const [open, setOpen] = useState(false);
@@ -37,7 +36,7 @@ function CreateCredentialDialog({ triggerText }: { triggerText?: string }) {
   });
 
   const { mutate, isPending } = useMutation({
-    mutationFn: CreateCredential,
+    mutationFn: createCredential,
     onSuccess: () => {
       toast.success("Credential created", { id: "create-credential" });
       form.reset();

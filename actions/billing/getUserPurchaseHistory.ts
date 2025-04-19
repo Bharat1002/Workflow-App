@@ -3,7 +3,7 @@
 import prisma from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 
-export async function GetUserPurchaseHistory() {
+export async function getUserPurchaseHistory() {
   const { userId } = await auth();
 
   if (!userId) {

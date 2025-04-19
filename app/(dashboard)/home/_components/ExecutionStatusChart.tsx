@@ -20,9 +20,9 @@ import {
 import { Layers2Icon } from "lucide-react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 import { date } from "zod";
-import { GetWorkflowExecutionsStats } from "@/actions/analytics/getWorkflowExecutionStats";
+import { getWorkflowExecutionStats } from "@/actions/analytics/getWorkflowExecutionStats";
 
-type ChartData = Awaited<ReturnType<typeof GetWorkflowExecutionsStats>>;
+type ChartData = Awaited<ReturnType<typeof getWorkflowExecutionStats>>;
 
 const chartConfig = {
   success: { label: "Success", color: "hsl(var(--chart-2))" },

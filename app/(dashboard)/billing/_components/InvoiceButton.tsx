@@ -1,5 +1,5 @@
 "use client";
-import { DownloadInvoice } from "@/actions/billing/downloadInvoice";
+import { downloadInvoice } from "@/actions/billing/downloadInvoice";
 import { Button } from "@/components/ui/button";
 import { useMutation } from "@tanstack/react-query";
 import { Loader2Icon } from "lucide-react";
@@ -8,7 +8,7 @@ import { toast } from "sonner";
 
 function InvoiceButton({ id }: { id: string }) {
   const mutation = useMutation({
-    mutationFn: DownloadInvoice,
+    mutationFn: downloadInvoice,
     onSuccess: (data) => {
       window.open(data as string, "_blank");
     },

@@ -1,7 +1,6 @@
 "use client";
 
-import { DeleteCredential } from "@/actions/credentials/deleteCredential";
-import { DeleteWorkflow } from "@/actions/workflows/deleteWorkflow";
+import { deleteCredential } from "@/actions/credentials/deleteCredential";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -29,7 +28,7 @@ function DeleteCredentialDialog({ name }: Props) {
   const [confirmText, setConfirmText] = useState("");
 
   const deleteMutation = useMutation({
-    mutationFn: DeleteCredential,
+    mutationFn: deleteCredential,
     onSuccess: () => {
       toast.success("Credential deleted successfully", { id: name });
       setConfirmText("");

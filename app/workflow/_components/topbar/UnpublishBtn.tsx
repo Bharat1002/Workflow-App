@@ -1,6 +1,6 @@
 "use client";
 
-import { UnpublishWorkflow } from "@/actions/workflows/unpublishWorkflow";
+import { unpublishWorkflow } from "@/actions/workflows/unpublishWorkflow";
 import useExecutionPlan from "@/components/hooks/useExecutionPlan";
 import { Button } from "@/components/ui/button";
 import { useMutation } from "@tanstack/react-query";
@@ -10,7 +10,7 @@ import { toast } from "sonner";
 
 function UnpublishBtn({ workflowId }: { workflowId: string }) {
   const mutation = useMutation({
-    mutationFn: UnpublishWorkflow,
+    mutationFn: unpublishWorkflow,
     onSuccess: () => {
       toast.success("Workflow unpublished", { id: workflowId });
     },

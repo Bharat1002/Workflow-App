@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { LockKeyholeIcon, ShieldIcon, ShieldOffIcon } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { GetCredentialsForUser } from "@/actions/credentials/getCredentialsForUser";
+import { getCredentialsForUser } from "@/actions/credentials/getCredentialsForUser";
 import { Card } from "@/components/ui/card";
 import CreateCredentialDialog from "./_components/CreateCredentialDialog";
 import { formatDistanceToNow } from "date-fns";
@@ -40,7 +40,7 @@ function CredentialsPage() {
 export default CredentialsPage;
 
 async function UserCredentials() {
-  const credentials = await GetCredentialsForUser();
+  const credentials = await getCredentialsForUser();
   if (!credentials) {
     return <div className="">Something went wrong</div>;
   }

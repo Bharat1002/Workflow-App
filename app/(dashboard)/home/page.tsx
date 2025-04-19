@@ -1,14 +1,14 @@
-import { GetPeriods } from "@/actions/analytics/getPeriods";
+import { getPeriods } from "@/actions/analytics/getPeriods";
 import React, { Suspense } from "react";
 import PeriodSelector from "./_components/PeriodSelector";
 import { Period } from "@/types/analitics";
 import { Skeleton } from "@/components/ui/skeleton";
-import { GetStatsCardsValues } from "@/actions/analytics/getStatsCardsValues";
+import { getStatsCardsValues } from "@/actions/analytics/getStatsCardsValues";
 import { CirclePlayIcon, CoinsIcon, WaypointsIcon } from "lucide-react";
 import StatsCard from "./_components/StatsCard";
-import { GetWorkflowExecutionsStats } from "@/actions/analytics/getWorkflowExecutionStats";
+import { getWorkflowExecutionStats } from "@/actions/analytics/getWorkflowExecutionStats";
 import ExecutionStatusChart from "./_components/ExecutionStatusChart";
-import { GetCreditUsageInPeriod } from "@/actions/analytics/getCreditUsageInPeriod";
+import { getCreditUsageInPeriod } from "@/actions/analytics/getCreditUsageInPeriod";
 import CreditUsageChart from "../billing/_components/CreditUsageChart";
 
 const HomePage = ({
@@ -52,12 +52,12 @@ async function PeriodSelectorWrapper({
 }: {
   selectedPeriod: Period;
 }) {
-  const periods = await GetPeriods();
+  const periods = await getPeriods();
   return <PeriodSelector periods={periods} selectedPeriod={selectedPeriod} />;
 }
 
 async function StatsCards({ selectedPeriod }: { selectedPeriod: Period }) {
-  const data = await GetStatsCardsValues(selectedPeriod);
+  const data = await getStatsCardsValues(selectedPeriod);
   return (
     <div className="grid gap-3 lg:gap-8 lg:grid-cols-3 min-h-[120px]">
       <StatsCard
@@ -84,7 +84,7 @@ async function StatsExecutionStatus({
 }: {
   selectedPeriod: Period;
 }) {
-  const data = await GetWorkflowExecutionsStats(selectedPeriod);
+  const data = await getWorkflowExecutionStats(selectedPeriod);
 
   return <ExecutionStatusChart data={data} />;
 }
@@ -93,7 +93,7 @@ async function CreditsUsageInPeriod({
 }: {
   selectedPeriod: Period;
 }) {
-  const data = await GetCreditUsageInPeriod(selectedPeriod);
+  const data = await getCreditUsageInPeriod(selectedPeriod);
 
   return (
     <CreditUsageChart

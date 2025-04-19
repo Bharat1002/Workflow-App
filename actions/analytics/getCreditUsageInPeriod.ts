@@ -20,7 +20,7 @@ type Stats = Record<
 
 const { COMPLETED, FAILED } = ExecutionPhaseStatus;
 
-export async function GetCreditUsageInPeriod(period: Period) {
+export async function getCreditUsageInPeriod(period: Period) {
   const { userId } = await auth();
 
   if (!userId) {

@@ -5,11 +5,8 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { CopyIcon, Layers2Icon, Loader2 } from "lucide-react";
 import CustomDialogHeader from "@/components/CustomDialogHeader";
-import { z } from "zod";
 import { useForm } from "react-hook-form";
 import {
-  createWorkflowSchema,
-  createWorkflowSchemaType,
   duplicateWorkflowSchema,
   duplicateWorkflowSchemaType,
 } from "@/schema/workflows";
@@ -27,7 +24,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { DuplicateWorkflow } from "@/actions/workflows/duplicateWorkflow";
+import { duplicateWorkflow } from "@/actions/workflows/duplicateWorkflow";
 import { cn } from "@/lib/utils";
 
 function DuplicateWorkflowDialog({ workflowId }: { workflowId?: string }) {
@@ -41,7 +38,7 @@ function DuplicateWorkflowDialog({ workflowId }: { workflowId?: string }) {
   });
 
   const { mutate, isPending } = useMutation({
-    mutationFn: DuplicateWorkflow,
+    mutationFn: duplicateWorkflow,
     onSuccess: () => {
       toast.success("Workflow duplicated", { id: "duplicate-workflow" });
       setOpen((prev) => !prev);

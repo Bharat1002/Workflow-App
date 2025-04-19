@@ -15,13 +15,13 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { PurchaseCredits } from "@/actions/billing/purchaseCredits";
+import { purchaseCredits } from "@/actions/billing/purchaseCredits";
 
 function CreditsPurchase() {
   const [selectedPack, setSelectedPack] = useState(PackId.MEDIUM);
 
   const mutation = useMutation({
-    mutationFn: PurchaseCredits,
+    mutationFn: purchaseCredits,
     onSuccess: () => {
       toast.success("Credits credited successfully", { id: "purchase" });
     },

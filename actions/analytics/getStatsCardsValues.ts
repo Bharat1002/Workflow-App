@@ -8,7 +8,7 @@ import { auth } from "@clerk/nextjs/server";
 
 const { COMPLETED, FAILED } = WorkflowExecutionStatus;
 
-export async function GetStatsCardsValues(period: Period) {
+export async function getStatsCardsValues(period: Period) {
   const { userId } = auth();
   if (!userId) {
     throw new Error("unauthenticated");

@@ -14,7 +14,7 @@ import {
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
-export async function RunWorkflow(form: {
+export async function runWorkflow(form: {
   workflowId: string;
   flowDefinition?: string;
 }) {

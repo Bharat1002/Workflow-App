@@ -1,7 +1,7 @@
-import { SetupUser } from "@/actions/billing/setupUser";
+import { setupUser } from "@/actions/billing/setupUser";
 
 async function SetupPage() {
-  return await SetupUser();
+  return await setupUser();
 }
 
 export default SetupPage;

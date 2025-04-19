@@ -9,7 +9,7 @@ import {
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 
-export async function CreateCredential(form: createCredentialSchemaType) {
+export async function createCredential(form: createCredentialSchemaType) {
   const { success, data } = createCredentialSchema.safeParse(form);
   if (!success) {
     throw new Error("invalid form data");

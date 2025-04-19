@@ -16,11 +16,11 @@ import { cn } from "@/lib/utils";
 import CustomDialogHeader from "@/components/CustomDialogHeader";
 import { Input } from "@/components/ui/input";
 import { useMutation } from "@tanstack/react-query";
-import { UpdateWorkflowCron } from "@/actions/workflows/updateWorkflowCron";
+import { updateWorkflowCron } from "@/actions/workflows/updateWorkflowCron";
 import { toast } from "sonner";
 import cronstrue from "cronstrue";
 import parser from "cron-parser";
-import { RemoveWorkflowSchedule } from "@/actions/workflows/removeWorkflowSchedule";
+import { removeWorkflowSchedule } from "@/actions/workflows/removeWorkflowSchedule";
 import { Separator } from "@radix-ui/react-dropdown-menu";
 
 function SchedulerDialog(props: { workflowId: string; cron: string | null }) {
@@ -29,7 +29,7 @@ function SchedulerDialog(props: { workflowId: string; cron: string | null }) {
   const [readableCron, setReadableCron] = useState("");
 
   const mutation = useMutation({
-    mutationFn: UpdateWorkflowCron,
+    mutationFn: updateWorkflowCron,
     onSuccess: () => {
       toast.success("Schedule updated successfully", { id: "cron" });
     },
@@ -39,7 +39,7 @@ function SchedulerDialog(props: { workflowId: string; cron: string | null }) {
   });
 
   const removeScheduleMutation = useMutation({
-    mutationFn: RemoveWorkflowSchedule,
+    mutationFn: removeWorkflowSchedule,
     onSuccess: () => {
       toast.success("Schedule updated successfully", { id: "cron" });
     },

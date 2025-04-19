@@ -1,6 +1,6 @@
 "use client";
 
-import { UpdateWorkflow } from "@/actions/workflows/updateWorkflow";
+import { updateWorkflow } from "@/actions/workflows/updateWorkflow";
 import { Button } from "@/components/ui/button";
 import { useMutation } from "@tanstack/react-query";
 import { useReactFlow } from "@xyflow/react";
@@ -11,7 +11,7 @@ function SaveBtn({ workflowId }: { workflowId: string }) {
   const { toObject } = useReactFlow();
 
   const saveMutation = useMutation({
-    mutationFn: UpdateWorkflow,
+    mutationFn: updateWorkflow,
     onSuccess: () => {
       toast.success("Flow saved successfully", { id: "save-workflow" });
     },

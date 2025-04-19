@@ -1,7 +1,7 @@
 "use client";
 
-import { GetWorkflowExecutionWithPhases } from "@/actions/workflows/getWorkflowExecutionWithPhases";
-import { GetWorkflowPhaseDetails } from "@/actions/workflows/getWorkflowPhaseDetails";
+import { getWorkflowExecutionWithPhases } from "@/actions/workflows/getWorkflowExecutionWithPhases";
+import { getWorkflowPhaseDetails } from "@/actions/workflows/getWorkflowPhaseDetails";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -45,7 +45,7 @@ import { LogLevel } from "@/types/log";
 import PhaseStatusBadge from "./PhaseStatusBadge";
 import ReactCountUpWrapper from "@/components/ReactCountUpWrapper";
 
-type ExecutionData = Awaited<ReturnType<typeof GetWorkflowExecutionWithPhases>>;
+type ExecutionData = Awaited<ReturnType<typeof getWorkflowExecutionWithPhases>>;
 export default function ExecutionViewer({
   initialData,
 }: {
@@ -55,7 +55,7 @@ export default function ExecutionViewer({
   const query = useQuery({
     queryKey: ["execution", initialData?.id],
     initialData,
-    queryFn: () => GetWorkflowExecutionWithPhases(initialData!.id),
+    queryFn: () => getWorkflowExecutionWithPhases(initialData!.id),
     refetchInterval: (q) =>
       q.state.data?.status === WorkflowExecutionStatus.RUNNING ? 1000 : false,
   });
@@ -63,7 +63,7 @@ export default function ExecutionViewer({
   const phaseDetails = useQuery({
     queryKey: ["phaseDetails", selectedPhase, query.data?.status],
     enabled: selectedPhase !== null,
-    queryFn: () => GetWorkflowPhaseDetails(selectedPhase!),
+    queryFn: () => getWorkflowPhaseDetails(selectedPhase!),
   });
 
   const isRunning = query.data?.status === WorkflowExecutionStatus.RUNNING;

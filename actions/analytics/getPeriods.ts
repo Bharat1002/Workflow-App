@@ -4,7 +4,7 @@ import prisma from "@/lib/prisma";
 import { Period } from "@/types/analitics";
 import { auth } from "@clerk/nextjs/server";
 
-export async function GetPeriods() {
+export async function getPeriods() {
   const { userId } = auth();
   if (!userId) {
     throw new Error("unauthenticated");

@@ -6,7 +6,7 @@ import { getCreditsPack, PackId } from "@/types/billing";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
-export async function PurchaseCredits(packId: PackId) {
+export async function purchaseCredits(packId: PackId) {
   const { userId } = await auth();
 
   if (!userId) {

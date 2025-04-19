@@ -18,7 +18,7 @@ type Stats = Record<
   }
 >;
 
-export async function GetWorkflowExecutionsStats(period: Period) {
+export async function getWorkflowExecutionStats(period: Period) {
   const { userId } = await auth();
 
   if (!userId) {

@@ -5,7 +5,7 @@ import { auth } from "@clerk/nextjs/server";
 import parser from "cron-parser";
 import { revalidatePath } from "next/cache";
 
-export async function UpdateWorkflowCron({
+export async function updateWorkflowCron({
   id,
   cron,
 }: {
