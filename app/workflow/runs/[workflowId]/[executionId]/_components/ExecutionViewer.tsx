@@ -1,6 +1,6 @@
 "use client";
 
-import { getWorkflowExecutionWithPhases } from "@/actions/workflows/getWorkflowExecutionWithPhases";
+import { getWorkflowsExecutionWithPhases } from "@/actions/workflows/getWorkflowsExecutionWithPhases";
 import { getWorkflowPhaseDetails } from "@/actions/workflows/getWorkflowPhaseDetails";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -45,7 +45,9 @@ import { LogLevel } from "@/types/log";
 import PhaseStatusBadge from "./PhaseStatusBadge";
 import ReactCountUpWrapper from "@/components/ReactCountUpWrapper";
 
-type ExecutionData = Awaited<ReturnType<typeof getWorkflowExecutionWithPhases>>;
+type ExecutionData = Awaited<
+  ReturnType<typeof getWorkflowsExecutionWithPhases>
+>;
 export default function ExecutionViewer({
   initialData,
 }: {
@@ -55,7 +57,7 @@ export default function ExecutionViewer({
   const query = useQuery({
     queryKey: ["execution", initialData?.id],
     initialData,
-    queryFn: () => getWorkflowExecutionWithPhases(initialData!.id),
+    queryFn: () => getWorkflowsExecutionWithPhases(initialData!.id),
     refetchInterval: (q) =>
       q.state.data?.status === WorkflowExecutionStatus.RUNNING ? 1000 : false,
   });
